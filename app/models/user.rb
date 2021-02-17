@@ -5,4 +5,5 @@ class User < ApplicationRecord
     validates :email, presence: true
     validates :email, unqiueness: true
 
+    has_many :entries
 end
