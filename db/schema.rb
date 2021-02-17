@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_030934) do
 
   create_table "provisions", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "provision_type"
     t.integer "approx_cals_per_serving"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
