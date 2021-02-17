@@ -1,0 +1,2 @@
+class Provision < ApplicationRecord
+end

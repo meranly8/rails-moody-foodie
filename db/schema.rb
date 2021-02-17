@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_024545) do
+ActiveRecord::Schema.define(version: 2021_02_17_030934) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2021_02_17_024545) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["entry_id"], name: "index_entry_provisions_on_entry_id"
     t.index ["provision_id"], name: "index_entry_provisions_on_provision_id"
+  end
+
+  create_table "provisions", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.integer "approx_cals_per_serving"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
