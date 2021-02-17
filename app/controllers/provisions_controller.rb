@@ -1,0 +1,3 @@
+class ProvisionsController < ApplicationController
+    
+end
