@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_id: 1
+  provision_id: 1
+  amount: 1
+  unit: MyString
+  homemade: false
+  description: MyString
+
+two:
+  entry_id: 1
+  provision_id: 1
+  amount: 1
+  unit: MyString
+  homemade: false
+  description: MyString

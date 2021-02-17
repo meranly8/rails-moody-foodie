@@ -1,0 +1,2 @@
+class EntryProvision < ApplicationRecord
+end
