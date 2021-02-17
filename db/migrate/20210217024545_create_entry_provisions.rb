@@ -1,8 +1,8 @@
 class CreateEntryProvisions < ActiveRecord::Migration[6.1]
   def change
     create_table :entry_provisions do |t|
-      t.integer :entry_id
-      t.integer :provision_id
+      t.references :entry, foreign_key: true
+      t.references :provision, foreign_key: true
       t.integer :amount
       t.string :unit
       t.boolean :homemade
