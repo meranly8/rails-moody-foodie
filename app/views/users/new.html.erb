@@ -1,0 +1,11 @@
+<h1>Become a Moody Foodie</h1>
+<h2>Signup</h2>
+<%= form_with(model: @user, url: '/signup', local: true) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %><br><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br><br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br><br>
+    <%= f.submit %>
+<% end %>
