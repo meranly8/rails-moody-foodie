@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_02_17_030934) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "entry_provisions", force: :cascade do |t|
@@ -30,8 +29,6 @@ ActiveRecord::Schema.define(version: 2021_02_17_030934) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["entry_id"], name: "index_entry_provisions_on_entry_id"
-    t.index ["provision_id"], name: "index_entry_provisions_on_provision_id"
   end
 
   create_table "provisions", force: :cascade do |t|
@@ -52,7 +49,4 @@ ActiveRecord::Schema.define(version: 2021_02_17_030934) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "entries", "users"
-  add_foreign_key "entry_provisions", "entries"
-  add_foreign_key "entry_provisions", "provisions"
 end
