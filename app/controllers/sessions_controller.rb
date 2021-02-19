@@ -12,8 +12,17 @@ class SessionsController < ApplicationController
         end
     end
 
+    def omniauth
+
+    end
+
     def destroy
         reset_session
         redirect_to login_path
     end
+
+    private
+        def auth
+            request.env['omniauth.auth']
+        end
 end
