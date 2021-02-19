@@ -3,17 +3,19 @@ class SessionsController < ApplicationController
     end
 
     def create
-        user = User.find_by(email: params[:user][:email])
+        user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
             session[:id] = user.id
             redirect_to user_path(user)
         else
+            flash[:message] = "Invalid credentials. Please try again."
             redirect_to login_path
         end
     end
 
     def omniauth
-        user = User.find_or_create_from_omniauth(auth)
+        binding.pry
+        user = User.create_from_omniauth(auth)
         if user.valid?
             session[:user_id] = user.id
             redirect_to root_path
