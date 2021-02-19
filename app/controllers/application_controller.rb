@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
     end
+
+    def enforce_login
+        return redirect_to login_path unless logged_in?
+    end
 end
