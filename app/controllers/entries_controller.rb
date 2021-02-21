@@ -11,6 +11,16 @@ class EntriesController < ApplicationController
         @entry = Entry.new(date: Date.today)
     end
 
+    def create
+        @entry = Entry.new(entry_params)
+        if @entry.save
+            redirect_to entry_path(@entry)
+        else
+            flash[:message] = @entry.errors.full_messages("")
+            render :new
+        end
+    end
+
     private
         def entry_params
             params.require(:entry).permit(:date, :end_of_day_mood)
