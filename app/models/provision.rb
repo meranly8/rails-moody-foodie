@@ -4,4 +4,8 @@ class Provision < ApplicationRecord
 
     has_many :entry_provisions
     has_many :entries, through: :entry_provisions
+
+    def self.order_by_name
+        self.order(:name)
+    end
 end
