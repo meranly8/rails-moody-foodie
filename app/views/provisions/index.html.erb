@@ -1,0 +1,6 @@
+<h1>Provisions</h1>
+<ul>
+<% @provisions.each do |p| %>
+    <li><%= link_to p.name, provision_path(p) %></li>
+<% end %>
+</ul>
