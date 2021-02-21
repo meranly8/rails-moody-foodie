@@ -1,0 +1,8 @@
+<h1>New Entry</h1>
+<%= form_for @entry do |f| %>
+    <%= f.label :date %>: 
+    <%= f.date_field :date %><br><br>
+    <%= f.label :end_of_day_mood, "End of Day Mood" %>: 
+    <%= f.select :end_of_day_mood, ["Elated", "Great", "Happy", "Good", "Hopeful", "Relaxed", "Indifferent", "Sick", "Anxious", "Sad", "Bad", "Scared", "Bad", "Scared", "Disappointed"], prompt: "Select Mood" %><br><br>
+    <%= f.submit %>
+<% end %>
