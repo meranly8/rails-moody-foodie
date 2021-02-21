@@ -10,4 +10,9 @@ class EntriesController < ApplicationController
     def new
         @entry = Entry.new(date: Date.today)
     end
+
+    private
+        def entry_params
+            params.require(:entry).permit(:date, :end_of_day_mood)
+        end
 end
