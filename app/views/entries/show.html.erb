@@ -4,6 +4,8 @@
 <ul>
     <% @entry.entry_provisions.each do |ep| %>
         <li><%= link_to ep.provision.name, provision_path(ep.provision) %> (<%= ep.provision.provision_type %>)<br>
-        <%= ep.amount %> <%= ep.unit %></li> 
+        <%= ep.amount %> <%= ep.unit %><br>
+        Homemade: <%= ep.homemade %><br>
+        <%= ep.description %></li> 
     <% end %>        
 </ul>
