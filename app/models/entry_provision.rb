@@ -9,4 +9,8 @@ class EntryProvision < ApplicationRecord
     def amount_and_unit
         "#{self.amount} #{self.unit}"
     end
+
+    def self.order_by_created
+        self.order(:created_at)
+    end
 end
