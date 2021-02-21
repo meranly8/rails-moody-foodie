@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
     def index
-        @entries = Entry.all.sort_by{|entry| entry.date }.reverse
+        @entries = Entry.all
     end
 
     def show

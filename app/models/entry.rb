@@ -13,4 +13,8 @@ class Entry < ApplicationRecord
         self.date.strftime("%m/%d/%Y")
     end
 
+    def self.order_by_date
+        self.order(date: :desc)
+    end
+
 end
