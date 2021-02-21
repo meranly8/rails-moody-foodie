@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+    before_action :enforce_login
+    
     def index
         @entries = Entry.all
     end
