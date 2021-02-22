@@ -1,9 +1,14 @@
 <h1><%= link_to @entry.user.name, user_path(@entry.user) %>'s Entry for <%= @entry.date %></h1>
 <h2>Mood at End of the Day: <%= @entry.end_of_day_mood %></h2>
+<%= link_to "Edit Mood", edit_entry_path(@entry) %>
 <ul>
     <% @entry.entry_provisions.each do |ep| %>
         <li><%= link_to ep.provision.name, provision_path(ep.provision) %> - <%= ep.amount_and_unit %><br>
         Homemade: <%= ep.homemade %><br>
-        Description: <%= ep.description %></li><br> 
+        <%= ep.description %><br>
+        <%= link_to "Edit", edit_entry_provision_path(ep) %></li><br>
     <% end %>        
 </ul>
+<br>
+
+<%= link_to "New Entry Provision", new_entry_provision_path, method: :get %>
