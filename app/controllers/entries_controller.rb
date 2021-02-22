@@ -34,8 +34,8 @@ class EntriesController < ApplicationController
     end
 
     def destroy
-        @entry = Entry.find_by(id: params[:id])
-        @entry.destroy
+        entry = Entry.find_by(id: params[:id])
+        entry.destroy
         redirect_to user_show(current_user)
     end
 
