@@ -20,7 +20,7 @@ class EntryProvisionsController < ApplicationController
     redirect_to entry_provision_path(@entry_provision)
   end
 
-  def delete
+  def destroy
     @entry_provision = EntryProvision.find_by(id: params[:id])
     entry = @entry_provision.entry
     @entry_provision.destroy
