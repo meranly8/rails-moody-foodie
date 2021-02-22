@@ -1,0 +1,13 @@
+<h1>Edit Entry Provision</h1>
+<%= form_for @entry_provision do |f| %>
+    <%= f.label :amount %>: 
+    <%= f.number_field :amount %><br>
+    <%= f.label :unit %>: 
+    <%= f.text_field :unit %><br>
+    <%= f.label :homemade, "Homemade? " %>
+    <%= f.check_box :homemade %><br>
+    <%= f.label :description %>: 
+    <%= f.text_area :description %><br><br>
+    <%= f.submit "Add Entry Provision" %>
+<% end %>
+
