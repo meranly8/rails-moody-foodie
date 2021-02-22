@@ -33,6 +33,12 @@ class EntriesController < ApplicationController
         redirect_to entry_path(@entry)
     end
 
+    def destroy
+        @entry = Entry.find_by(id: params[:id])
+        @entry.destroy
+        redirect_to user_show(current_user)
+    end
+
     private
         def entry_params
             params.require(:entry).permit(:date, :end_of_day_mood)
