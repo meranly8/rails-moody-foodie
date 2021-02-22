@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
-    before_action :enforce_login
-    
+    # before_action :enforce_login
+
     def index
         @entries = Entry.all
     end
@@ -21,6 +21,10 @@ class EntriesController < ApplicationController
             flash[:message] = @entry.errors.full_messages("")
             render :new
         end
+    end
+
+    def edit
+        @entry = Entry.find_by(id: params[:id])
     end
 
     private
