@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   resources :entries
   resources :provisions, only: [:index, :show, :new, :create]
+  resources :entry_provisions
 end
