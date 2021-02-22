@@ -20,6 +20,13 @@ class EntryProvisionsController < ApplicationController
     redirect_to entry_provision_path(@entry_provision)
   end
 
+  def delete
+    @entry_provision = EntryProvision.find_by(id: params[:id])
+    entry = @entry_provision.entry
+    @entry_provision.destroy
+    redirect_to entry_path(entry)
+  end
+
   private
     def entry_provisions_params
       params.require(:entry_provision).permit(:provision_id, :amount, :unit, :homemade, :description)
