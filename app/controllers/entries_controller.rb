@@ -27,6 +27,12 @@ class EntriesController < ApplicationController
         @entry = Entry.find_by(id: params[:id])
     end
 
+    def update
+        @entry = Entry.find_by(id: params[:id])
+        @entry.update(entry_params)
+        redirect_to entry_path(@entry)
+    end
+
     private
         def entry_params
             params.require(:entry).permit(:date, :end_of_day_mood)
