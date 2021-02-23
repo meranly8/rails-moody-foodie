@@ -8,6 +8,7 @@ class EntryProvisionsController < ApplicationController
 
   def new
     @entry_provision = EntryProvision.new
+    @entry_provision.build_provision
   end
 
   def edit
@@ -29,6 +30,6 @@ class EntryProvisionsController < ApplicationController
 
   private
     def entry_provisions_params
-      params.require(:entry_provision).permit(:provision_id, :amount, :unit, :homemade, :description)
+      params.require(:entry_provision).permit(:amount, :unit, :homemade, :description, :provision_id, provision_attributes: [:name, :provision_type, :approx_cals_per_serving])
     end
 end
