@@ -1,3 +1,11 @@
 <h1><%= @provision.name %></h1>
 <h3>Type: <%= @provision.provision_type %></h3>
 <h3>Approximate Calories per Serving: <%= @provision.approx_cals_per_serving %> calories</h3>
+
+
+<h2>Eaten on</h2>
+<ul>
+<% @provision.entries.each do |e| %>
+    <li><%= link_to e.date, entry_path(e)%> by <%= e.user.name %></li><br>
+<% end %>
+</ul>
