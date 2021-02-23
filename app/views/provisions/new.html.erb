@@ -1,9 +1,9 @@
 <h1>New Provision</h1>
-<% if @entry.errors.any? %>
+<% if @provision.errors.any? %>
     <div id="error_explanation">
-    <h2> <%= pluralize(@entry.errors.count, "error") %> prohibited entry from being saved: </h2>
+    <h2> <%= pluralize(@provision.errors.count, "error") %> prohibited entry from being saved: </h2>
     <ul>
-        <% @entry.errors.full_messages.each do |msg| %>
+        <% @provision.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
         <% end %>
     </ul>
