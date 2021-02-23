@@ -4,6 +4,12 @@ class EntryProvision < ApplicationRecord
 
     validates :amount, :unit, presence: true
     validates :amount, numericality: {greater_than: 0}
+    
+    def provision_attributes=(attr)
+        if !attr[:name].blank?
+            self.provision = Provision.find_or_create_by(name: attr(:name))
+        end
+    end
 
     def amount_and_unit
         "#{self.amount} #{self.unit}"
