@@ -4,3 +4,5 @@
     <li><%= link_to p.name, provision_path(p) %></li>
 <% end %>
 </ul>
+<br><br>
+<%= button_to "Add Provision", new_provision_path, method: :get %>
