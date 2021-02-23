@@ -1,6 +1,6 @@
 class ProvisionsController < ApplicationController
     def index
-        @provisions = Provision.all
+        @provisions = Provision.order_by_name
     end
 
     def show
