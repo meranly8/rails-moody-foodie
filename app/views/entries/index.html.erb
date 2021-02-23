@@ -1,5 +1,5 @@
 <ul>
     <% @entries.each do |e| %>
-        <li><%= e.short_date %></li>
+        <li><%= link_to e.short_date, entry_path(e) %></li>
     <% end %>
 </ul>
