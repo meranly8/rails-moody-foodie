@@ -1,5 +1,14 @@
 <h1>New Entry Provision</h1>
 <%= form_for @entry_provision do |f| %>
+    <%= f.label :provision %>: 
+    <%= f.fields_for :provision do |p| %>
+        <%= p.label :name %>: 
+        <%= p.text_field :name %><br>
+        <%= p.label :provision_type, "Provision Type: " %>
+        <%= p.select :provision_type, ["Food", "Drink"], prompt: "Select Type" %><br>
+        <%= p.label :approx_cals_per_serving, "Approximate Calories per Serving: " %>
+        <%= p.number_field :approx_cals_per_serving, min: 0 %><br><br>
+    <% end %>
     <%= f.label :amount %>: 
     <%= f.number_field :amount %><br>
     <%= f.label :unit %>: 
