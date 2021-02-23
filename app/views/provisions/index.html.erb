@@ -1,7 +1,7 @@
 <h1>Provisions</h1>
 <ul>
 <% @provisions.each do |p| %>
-    <li><%= link_to p.name, provision_path(p) %></li>
+    <li><%= link_to p.name, provision_path(p) %> (<%= p.approx_cals_per_serving %> cals)</li>
 <% end %>
 </ul>
 <br><br>
