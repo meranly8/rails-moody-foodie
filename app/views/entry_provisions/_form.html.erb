@@ -1,0 +1,32 @@
+<% if @entry_provision.errors.any? %>
+    <div id="error_explanation">
+    <h2> <%= pluralize(@entry_provision.errors.count, "error") %> prohibited entry from being saved: </h2>
+    <ul>
+        <% @entry_provision.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+    </div>
+<% end %>
+
+<%= form_for @entry_provision do |f| %>
+    Select Existing or Create New Provision<br>
+    <%= f.label :name, "Provision Name:" %>
+    <%= f.collection_select :provision_id, Provision.all, :id, :name, prompt: "Select Provision" %>
+    <%= f.fields_for :provision do |p| %> 
+        <%= p.text_field :name %><br>
+        <%= p.label :provision_type, "Provision Type: " %>
+        <%= p.select :provision_type, ["Food", "Drink"], prompt: "Select Type" %><br>
+        <%= p.label :approx_cals_per_serving, "Approximate Calories per Serving: " %>
+        <%= p.number_field :approx_cals_per_serving, min: 0 %><br><br>
+    <% end %>
+    <%= f.label :amount %>: 
+    <%= f.number_field :amount %><br>
+    <%= f.label :unit %>: 
+    <%= f.text_field :unit %><br>
+    <%= f.label :homemade, "Homemade? " %>
+    <%= f.check_box :homemade %><br>
+    <%= f.label :description %>: 
+    <%= f.text_area :description %><br><br>
+    <%= f.submit "Add Entry Provision" %>
+<% end %>
