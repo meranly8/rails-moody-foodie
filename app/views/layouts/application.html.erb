@@ -12,7 +12,8 @@
 
   <body>
   <br>
-  <%= link_to("Entries List", entries_path) %>  | <%= link_to("Provisions List", provisions_path) %>
+  <%= nav_bar %>
+   | <%= link_to("Entries List", entries_path) %>  | <%= link_to("Provisions List", provisions_path) %>
   <% if flash[:message] %>
     <br><br>
     <div class="field_with errors"><%= flash[:message] %></div>
