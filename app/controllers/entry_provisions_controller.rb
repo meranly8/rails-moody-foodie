@@ -11,6 +11,16 @@ class EntryProvisionsController < ApplicationController
     @entry_provision.build_provision
   end
 
+  def create
+    @entry_provision = EntryProvision.new(entry_provisions_params)
+    if @entry_provision.save
+      redirect_to entry_provision_path(@entry_provision)
+    else
+      flash[:message] = @entry_provision.errors.full_messages.join("")
+      render :new
+    end
+  end
+
   def edit
     @entry_provision = EntryProvision.find_by(id: params[:id])
   end
