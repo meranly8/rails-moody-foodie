@@ -7,7 +7,7 @@ class EntryProvision < ApplicationRecord
     
     def provision_attributes=(attr)
         if !attr[:name].blank?
-            self.provision = Provision.find_or_create_by(name: attr(:name))
+            self.provision = Provision.find_or_create_by(name: attr[:name])
         end
     end
 
