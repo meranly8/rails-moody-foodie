@@ -4,7 +4,7 @@
 <ul>
     <% @entry.entry_provisions.each do |ep| %>
         <li><%= link_to ep.provision.name, provision_path(ep.provision) %> - <%= ep.amount_and_unit %><br>
-        Homemade: <%= ep.homemade %><br>
+        Homemade: <%= ep.homemade ? "Yes" : "No" %><br>
         <%= ep.description %><br>
         <%= link_to "Edit", edit_entry_provision_path(ep) %> | <%= link_to "Delete", entry_provision_path(ep), method: :delete %></li><br>
     <% end %>        
