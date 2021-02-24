@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
     # before_action :enforce_login
 
     def index
-        @entries = Entry.all
+        @entries = Entry.order_by_date
     end
 
     def show
@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
     end
 
     def create
-        @entry = Entry.new(entry_params)
+        @entry = current_user.entries.build(entry_params)
         if @entry.save
             redirect_to entry_path(@entry)
         else
