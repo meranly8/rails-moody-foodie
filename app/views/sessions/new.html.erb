@@ -1,4 +1,5 @@
-<h1>Login</h1>
+<h1>Moody Foodie Login</h1>
+<h4>We're in a good mood now that you're back.</h4>
 <%= form_with url: '/sessions' do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email %><br><br>
@@ -9,3 +10,4 @@
 <br>
 <br>
 <%= button_to "Login with Google", '/auth/google_oauth2'  %>
+<br><br>
