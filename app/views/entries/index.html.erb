@@ -1,5 +1,0 @@
-<ul>
-    <% @entries.each do |e| %>
-        <li><%= link_to e.short_date, entry_path(e) %> - <%= e.user.name %></li>
-    <% end %>
-</ul>
