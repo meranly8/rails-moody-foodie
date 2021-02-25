@@ -1,5 +1,8 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<h1>It's the Moody Foodie</h1>
+
+<h3>Hi, <%= current_user.name %>!</h3>
+<p>We're excited to hear about what you have been eating and how it has making you feel at the end of the day.</p>
 
 
-<%= button_to "Logout", logout_path, method: :delete %>
+<br><br><%= link_to "View your Entries", user_path(current_user) %><br><br>
+<%= link_to "Create New Date Entry", new_entry_path %>
