@@ -1,9 +1,5 @@
 class EntriesController < ApplicationController
-    # before_action :enforce_login
-
-    def index
-        @entries = Entry.order_by_date
-    end
+    before_action :enforce_login
 
     def show
         @entry = Entry.find_by(id: params[:id])
@@ -36,7 +32,7 @@ class EntriesController < ApplicationController
     def destroy
         entry = Entry.find_by(id: params[:id])
         entry.destroy
-        redirect_to user_show(current_user)
+        redirect_to user_path(current_user)
     end
 
     private
