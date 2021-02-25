@@ -1,4 +1,7 @@
 class EntryProvisionsController < ApplicationController
+  before_action :enforce_login
+  before_action :set_entry_provision, only: [:edit, :update, :destroy]
+
   def index
     # is this a nested route?
     if params[:entry_id] && @entry = Entry.find_by_id(params[:entry_id])
@@ -24,24 +27,25 @@ class EntryProvisionsController < ApplicationController
   end
 
   def edit
-    @entry_provision = EntryProvision.find_by(id: params[:id])
   end
 
   def update
-    @entry_provision = EntryProvision.find_by(id: params[:id])
     @entry_provision.update(entry_provision_params)
     redirect_to entry_path(@entry_provision.entry)
   end
 
   def destroy
-    entry_provision = EntryProvision.find_by(id: params[:id])
-    entry = entry_provision.entry
-    entry_provision.destroy
+    entry = @entry_provision.entry
+    @entry_provision.destroy
     redirect_to entry_path(entry)
   end
 
   private
     def entry_provision_params
       params.require(:entry_provision).permit(:amount, :unit, :homemade, :description, :entry_id, :provision_id, provision_attributes: [:name, :provision_type, :approx_cals_per_serving])
+    end
+
+    def set_entry_provision
+      @entry_provision = EntryProvision.find_by(id: params[:id])
     end
 end
