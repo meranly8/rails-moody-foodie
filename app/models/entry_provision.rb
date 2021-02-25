@@ -7,7 +7,10 @@ class EntryProvision < ApplicationRecord
     
     def provision_attributes=(attr)
         if !attr[:name].blank?
-            self.provision = Provision.find_or_create_by(name: attr[:name])
+            self.provision = Provision.find_or_create_by(name: attr[:name]) do |p|
+                p.provision_type = attr[:provision_type]
+                p.approx_cals_per_serving = attr[:approx_cals_per_serving]
+            end
         end
     end
 
