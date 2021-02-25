@@ -7,7 +7,7 @@ class Entry < ApplicationRecord
     has_many :provisions, through: :entry_provisions
 
     def date_and_mood
-        "#{self.date.strftime("%A, %d %b %Y")} - #{self.end_of_day_mood}"
+        "#{self.date.strftime("%A %d %b %Y")} - #{self.end_of_day_mood}"
     end
 
     def short_date
