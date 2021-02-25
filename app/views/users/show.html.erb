@@ -1,6 +1,6 @@
 <h1><%= @user.name %></h1>
 <ul>
-<% @user.entries.each do |e| %>
+<% @user.entries.order_by_date.each do |e| %>
     <li><%= link_to e.date_and_mood, entry_path(e) %></li><br>
 <% end %>
 </ul>
