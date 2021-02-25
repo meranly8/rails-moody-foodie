@@ -1,19 +1,20 @@
 class EntryProvisionsController < ApplicationController
   def index
+    # is this a nested route?
+    if params[:entry_id] && @entry = Entry.find_by_id(params[:entry_id])
+      @entry_provisions = @entry.entry_provisions
+    end
   end
 
-  def show
-    @entry_provision = EntryProvision.find_by(id: params[:id])
-  end
-  
   def new
-    @entry_provision = EntryProvision.new
-    @entry_provision.build_provision
+    if params[:entry_id] && @entry = Entry.find_by_id(params[:entry_id])
+      @entry_provision = @entry.entry_provisions.build
+      @entry_provision.build_provision
+    end
   end
 
   def create
     @entry_provision = EntryProvision.new(entry_provision_params)
-    @entry_provision.entry_id = session[:entry_id]
     if @entry_provision.save
       redirect_to entry_path(@entry_provision.entry)
     else
