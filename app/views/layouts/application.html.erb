@@ -13,7 +13,7 @@
   <body>
   <br>
   <%= nav_bar %>
-   | <%= link_to("Entries List", entries_path) %>  | <%= link_to("Provisions List", provisions_path) %>
+   | <%= link_to("Entries List", entries_path) %>  | <%= link_to("Provisions List", provisions_path) %> | <%= link_to("Logout", logout_path) %>
   <% if flash[:message] %>
     <br><br>
     <div class="field_with errors"><%= flash[:message] %></div>
