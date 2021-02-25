@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'welcome#home'
-  get '/welcome', to: 'welcome#welcome'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
