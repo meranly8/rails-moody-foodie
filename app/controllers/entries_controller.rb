@@ -7,7 +7,6 @@ class EntriesController < ApplicationController
 
     def show
         @entry = Entry.find_by(id: params[:id])
-        session[:entry_id] = @entry.id
     end
 
     def new
