@@ -1,4 +1,6 @@
 class ProvisionsController < ApplicationController
+    before_action :enforce_login
+    
     def index
         @provisions = Provision.order_by_name
     end
