@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :enforce_login, :authorized_for
+    helper_method :current_user, :logged_in?, :enforce_login, :authorized_for?
 
     def current_user
         @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
