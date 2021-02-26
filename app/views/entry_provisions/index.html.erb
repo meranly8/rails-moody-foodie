@@ -1,1 +1,7 @@
 <%= display_header(@entry) %>
+
+<ul>
+<% @entry_provisions.each do |ep| %>
+    <li><%= link_to ep.provision.name, provision_path(ep.provision) %></li><br>
+<% end %>
+</ul>
