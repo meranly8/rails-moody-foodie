@@ -1,8 +1,11 @@
 class EntriesController < ApplicationController
     before_action :enforce_login
-
+    before_action :set_entry, only: [:show, :edit, :update, :destroy]
+    
+    def index
+    end
+    
     def show
-        @entry = Entry.find_by(id: params[:id])
     end
 
     def new
@@ -14,29 +17,30 @@ class EntriesController < ApplicationController
         if @entry.save
             redirect_to entry_path(@entry)
         else
-            flash[:message] = @entry.errors.full_messages("")
+            flash[:message] = @entry.errors.full_messages.join(", ")
             render :new
         end
     end
 
     def edit
-        @entry = Entry.find_by(id: params[:id])
     end
 
     def update
-        @entry = Entry.find_by(id: params[:id])
         @entry.update(entry_params)
         redirect_to entry_path(@entry)
     end
 
     def destroy
-        entry = Entry.find_by(id: params[:id])
-        entry.destroy
+        @entry.destroy
         redirect_to user_path(current_user)
     end
 
     private
         def entry_params
             params.require(:entry).permit(:date, :end_of_day_mood)
+        end
+
+        def set_entry
+            @entry = Entry.find_by(id: params[:id])
         end
 end
