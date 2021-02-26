@@ -25,14 +25,14 @@
 * [x] &ensp;&ensp;Provision
 + &ensp;&ensp;&ensp;&ensp;Presence: name, provision_type
 
-- [ ] (~1) Class level ActiveRecord scope method
+- [x] (~1) Class level ActiveRecord scope method
 
-- [ ] Standard User authentication: signup, login, logout, passwords
+- [x] Standard User authentication: signup, login, logout, passwords
 
-- [ ] Omniauth User authentication system
+- [x] Omniauth User authentication system
 
 - [ ] Nested resource with appropriate RESTful URLs
-* [ ] &ensp;&ensp;Nested new route with form relating to parent resource
+* [x] &ensp;&ensp;Nested new route with form relating to parent resource
 * [ ] &ensp;&ensp;Nested index route
 
 - [ ] Validation errors displayed in forms
