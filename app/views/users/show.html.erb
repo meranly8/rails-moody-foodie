@@ -5,4 +5,6 @@
 <% end %>
 </ul>
 
-<%= button_to "New Entry", new_entry_path, method: :get %>
+<% if @user == current_user %>
+    <%= button_to "New Entry", new_entry_path, method: :get %>
+<% end %>
