@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :provisions, only: [:index, :show, :new, :create]
-  resources :entry_provisions
+  resources :entry_provisions, only: [:edit, :update, :destroy]
 end
