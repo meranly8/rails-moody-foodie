@@ -14,7 +14,4 @@ class EntryProvision < ApplicationRecord
         end
     end
 
-    def amount_and_unit
-        "#{self.amount} #{self.unit}"
-    end
 end
