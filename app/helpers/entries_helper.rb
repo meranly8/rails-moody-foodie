@@ -6,7 +6,7 @@ module EntriesHelper
         end
     end
     
-    def display_new_entry_link(entry)
+    def display_new_entry_provision_link(entry)
         if authorized_for?(entry)
             button_to "New Entry Provision", new_entry_entry_provision_path(entry), method: :get
         end
@@ -20,7 +20,7 @@ module EntriesHelper
 
     def display_edit_entry_provision_link(entry, ep)
         if authorized_for?(entry)
-            link_to "Edit", entry_provision_path(ep), method: :get
+            link_to "Edit", edit_entry_provision_path(ep)
         end
     end
 
