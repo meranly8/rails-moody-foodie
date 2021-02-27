@@ -20,4 +20,7 @@ module EntryProvisionsHelper
         @cal_sum
     end
     
+    def amount_and_unit
+        "#{self.amount}  #{self.unit}"
+    end
 end
