@@ -1,7 +1,8 @@
 <h1><%= @entry.short_date %> Entry</h1>
-<h2><%= link_to @entry.user.name, user_path(@entry.user) %></h2>
-<h2>Mood at End of the Day: <%= @entry.end_of_day_mood %> <%= display_edit_mood_link(@entry) %></h2>
-
+<h3><%= link_to @entry.user.name, user_path(@entry.user) %></h3>
+<h3>Mood at End of the Day: <%= @entry.end_of_day_mood %></h3> 
+<%= display_edit_mood_link(@entry) %>
+<br><br>
 <%= display_new_entry_provision_link(@entry) %>
 
 <br>
@@ -10,7 +11,7 @@
         <li><%= link_to ep.provision.name, provision_path(ep.provision) %> - <%= ep.amount_and_unit %><br>
         Homemade: <%= ep.homemade ? "Yes" : "No" %><br>
         <%= ep.description %><br>
-        <%= display_edit_entry_provision_link(@entry, ep) %> | <%= display_delete_entry_provision_link(@entry, ep) %></li><br>
+        <%= render partial: 'ep_edit_delete', locals: {entry: @entry, ep: ep} %></li><br>
     <% end %>        
 </ul>
 <br>
