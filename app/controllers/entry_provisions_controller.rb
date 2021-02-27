@@ -3,7 +3,6 @@ class EntryProvisionsController < ApplicationController
   before_action :set_entry_provision, only: [:edit, :update, :destroy]
 
   def index
-    # is this a nested route?
     if params[:entry_id] && @entry = Entry.find_by_id(params[:entry_id])
       @entry_provisions = @entry.entry_provisions
     end

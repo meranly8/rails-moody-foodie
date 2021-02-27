@@ -31,16 +31,16 @@
 
 - [x] Omniauth User authentication system
 
-- [ ] Nested resource with appropriate RESTful URLs
+- [x] Nested resource with appropriate RESTful URLs
 * [x] &ensp;&ensp;Nested new route with form relating to parent resource
-* [ ] &ensp;&ensp;Nested index route
+* [x] &ensp;&ensp;Nested index route
 
-- [ ] Validation errors displayed in forms
-* [ ] &ensp;&ensp;Fields enclosed within fields_with_errors class
-* [ ] &ensp;&ensp;Error messsages describing validation failures must be present within view
+- [x] Validation errors displayed in forms
+* [x] &ensp;&ensp;Fields enclosed within fields_with_errors class
+* [x] &ensp;&ensp;Error messsages describing validation failures must be present within view
 
-- [ ] Application must be DRY
-* [ ] &ensp;&ensp;Controller logic should be encapsulated as model methods
-* [ ] &ensp;&ensp;Views should use helper methods and partials when appropriate
+- [x] Application must be DRY
+* [x] &ensp;&ensp;Controller logic should be encapsulated as model methods
+* [x] &ensp;&ensp;Views should use helper methods and partials when appropriate
 
 - [x] Do not use scaffolding
