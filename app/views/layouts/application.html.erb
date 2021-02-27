@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMoodyFoodie</title>
+    <title>MoodyFoodie</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,12 +12,8 @@
 
   <body>
   <br>
-  <%= render partial: 'sessions/navigation' %>
-
-  <% if flash[:message] %>
-    <br><br>
-    <div class="field_with errors"><%= flash[:message] %></div>
-  <% end %>
+    <%= render partial: 'sessions/navigation' %><br><br>
+    <div class="field_with_errors"><%= flash[:message] %></div>
     <%= yield %>
   </body>
 </html>
