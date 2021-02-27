@@ -1,0 +1,3 @@
+<% if authorized_for?(entry) %>
+    <%= link_to "Edit", edit_entry_provision_path(ep) %> | <%= link_to "Delete", entry_provision_path(ep), method: :delete %>
+<% end %>
