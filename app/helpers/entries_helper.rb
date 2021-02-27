@@ -18,15 +18,4 @@ module EntriesHelper
         end
     end
 
-    def display_edit_entry_provision_link(entry, ep)
-        if authorized_for?(entry)
-            link_to "Edit", edit_entry_provision_path(ep)
-        end
-    end
-
-    def display_delete_entry_provision_link(entry, ep)
-        if authorized_for?(entry)
-            link_to "Delete", entry_provision_path(ep), method: :delete
-        end
-    end
 end
