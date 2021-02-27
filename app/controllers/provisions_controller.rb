@@ -18,7 +18,6 @@ class ProvisionsController < ApplicationController
         if @provision.save
             redirect_to provision_path(@provision)
         else
-            flash[:message] = @provision.errors.full_messages.join("")
             render :new
         end
     end
