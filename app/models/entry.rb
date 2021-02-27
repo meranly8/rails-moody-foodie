@@ -8,12 +8,4 @@ class Entry < ApplicationRecord
 
     scope :order_by_date, -> {order(date: :desc)}
     
-    def date_and_mood
-        "#{self.date.strftime("%A %d %b %Y")} - #{self.end_of_day_mood}"
-    end
-
-    def short_date
-        self.date.strftime("%m-%d-%Y")
-    end
-
 end
