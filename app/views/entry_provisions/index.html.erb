@@ -2,6 +2,11 @@
 
 <ul>
 <% @entry_provisions.each do |ep| %>
-    <li><%= link_to ep.provision.name, provision_path(ep.provision) %></li><br>
+    <li><%= link_to ep.provision.name, provision_path(ep.provision) %><br>
+    <%= ep.amount %> <%= ep.unit %> x <%= ep.provision.approx_cals_per_serving %> calories = <%= calorie_math(ep.amount, ep.provision.approx_cals_per_serving) %> calories</li><br>
 <% end %>
 </ul>
+
+<h3>Total: <%= calorie_total(@entry_provisions) %> calories</h3>
+<br><br>
+<%= link_to "Back to Entry", entry_path(@entry) %>
