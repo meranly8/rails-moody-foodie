@@ -1,10 +1,4 @@
 <h1><%= @user.name %></h1>
-<ul>
-<% @user.entries.order_by_date.each do |e| %>
-    <li><%= link_to e.date_and_mood, entry_path(e) %></li><br>
-<% end %>
-</ul>
+<%= render partial: 'entry_display', locals: {user: @user} %>
 
-<% if @user == current_user %>
-    <%= button_to "New Entry", new_entry_path, method: :get %>
-<% end %>
+<%= display_new_entry_link(@user) %>
