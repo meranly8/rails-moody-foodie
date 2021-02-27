@@ -11,11 +11,11 @@
 <% end %>
 
 <%= form_for @provision do |f| %>
-    <%= f.label :name %>: 
-    <%= f.text_field :name %><br>
-    <%= f.label :provision_type, "Provision Type: " %>
-    <%= f.select :provision_type, ["Food", "Drink"], prompt: "Select Type" %><br>
-    <%= f.label :approx_cals_per_serving, "Approximate Calories per Serving: " %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :provision_type, "Provision Type" %><br>
+    <%= f.select :provision_type, ["Food", "Drink"], prompt: "Select Type" %><br><br>
+    <%= f.label :approx_cals_per_serving, "Approximate Calories per Serving" %><br>
     <%= f.number_field :approx_cals_per_serving, min: 0 %><br><br>
     <%= f.submit %>
 <% end %>
