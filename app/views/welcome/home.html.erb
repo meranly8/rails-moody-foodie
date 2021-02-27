@@ -3,6 +3,5 @@
 <h3>Hi, <%= current_user.name %>!</h3>
 <p>We're excited to hear about what you have been eating and how you feel at the end of the day.</p>
 
-
-<br><br><%= link_to "View your Entries", user_path(current_user) %><br><br>
+<br><%= link_to "View your Entries", user_path(current_user) %><br><br>
 <%= button_to "Create New Date Entry", new_entry_path, method: :get %>
