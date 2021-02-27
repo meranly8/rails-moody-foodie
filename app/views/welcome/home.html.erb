@@ -5,4 +5,4 @@
 
 
 <br><br><%= link_to "View your Entries", user_path(current_user) %><br><br>
-<%= link_to "Create New Date Entry", new_entry_path %>
+<%= button_to "Create New Date Entry", new_entry_path, method: :get %>
