@@ -21,7 +21,7 @@ class EntryProvisionsController < ApplicationController
     if @entry_provision.save
       redirect_to entry_path(@entry_provision.entry)
     else
-      flash[:message] = @entry_provision.errors.full_messages.join("")
+      @entry_provision.build_provision
       render :new
     end
   end
@@ -30,8 +30,11 @@ class EntryProvisionsController < ApplicationController
   end
 
   def update
-    @entry_provision.update(entry_provision_params)
-    redirect_to entry_path(@entry_provision.entry)
+    if @entry_provision.update(entry_provision_params)
+      redirect_to entry_path(@entry_provision.entry)
+    else
+      render :edit
+    end
   end
 
   def destroy
