@@ -3,9 +3,4 @@
 <h3>Approximate Calories per Serving: <%= @provision.approx_cals_per_serving %> calories</h3>
 
 
-<h2>Eaten on</h2>
-<ul>
-<% @provision.entries.order_by_date.each do |e| %>
-    <li><%= link_to e.short_date, entry_path(e)%> by <%= e.user.name %></li><br>
-<% end %>
-</ul>
+<%= render partial: 'provision_display', locals: {provision: @provision} %>
