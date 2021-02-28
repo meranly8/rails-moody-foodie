@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_path
         else
-            flash[:message] = user.errors.full_messages.join("")
+            flash[:message] = "Invalid"
             redirect_to login_path
         end
     end
