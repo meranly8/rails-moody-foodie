@@ -1,10 +1,11 @@
 module EntryProvisionsHelper
-    def display_header(entry)
-        tag.h1("#{entry.short_date} Provisions Calorie Details")
-    end
 
-    def amount_and_unit
-        "#{self.amount} #{self.unit}"
+    def display_cal_details_link(entry)
+        if entry.entry_provisions.count == 0
+            "Add a New Entry Provisions!"
+        else
+            link_to "Entry Calorie Details", entry_entry_provisions_path(@entry)
+        end
     end
 
     def calorie_math(amount, cals)
