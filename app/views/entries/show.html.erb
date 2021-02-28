@@ -1,11 +1,10 @@
 <h1><%= @entry.short_date %> Entry</h1>
 <h3><%= link_to @entry.user.name, user_path(@entry.user) %></h3>
 <h3>Mood at End of the Day: <%= @entry.end_of_day_mood %></h3> 
-<%= display_edit_mood_link(@entry) %>
+<%= display_edit_mood_link(@entry) %><br>
 <br>
 <%= display_new_entry_provision_link(@entry) %>
-
-
+<br><%= display_cal_details_link(@entry) %><br><br>
 <ul>
     <% @entry.entry_provisions.each do |ep| %>
         <li><%= link_to ep.provision.name, provision_path(ep.provision) %> - <%= ep.amount_and_unit %><br>
@@ -15,6 +14,5 @@
     <% end %>        
 </ul>
 
-<%= link_to "Entry Calorie Details", entry_entry_provisions_path(@entry) %><br><br>
 <br>
 <%= display_delete_entry_link(@entry) %>
