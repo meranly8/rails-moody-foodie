@@ -1,5 +1,5 @@
 <% if provision.entries.count != 0 %>
-    <h4>Eaten on:</h4>
+    <h4>Consumed on:</h4>
     <ul>
     <% provision.entries.order_by_date.each do |e| %>
         <li><%= link_to e.short_date, entry_path(e)%> by <%= e.user.name %></li><br>
