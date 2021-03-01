@@ -2,7 +2,7 @@ module EntryProvisionsHelper
 
     def display_cal_details_link(entry)
         if entry.entry_provisions.count == 0
-            "Add a New Entry Provisions!"
+            "Add a New Entry Provision!"
         else
             link_to "Entry Calorie Details", entry_entry_provisions_path(@entry)
         end
