@@ -4,7 +4,7 @@ module EntryProvisionsHelper
         if entry.entry_provisions.count == 0
             "Add a New Entry Provision!"
         else
-            link_to "Entry Calorie Details", entry_entry_provisions_path(@entry)
+            link_to "Entry Calorie Details", entry_entry_provisions_path(entry)
         end
     end
 
