@@ -13,7 +13,7 @@
     <%= f.hidden_field :entry_id %>
     Select Existing or Create New Provision<br><br>
     <%= f.label :name, "Provision Name:" %>
-    <%= f.collection_select :provision_id, Provision.all, :id, :name, prompt: "Select Provision" %>
+    <%= f.collection_select :provision_id, Provision.order_by_name, :id, :name, prompt: "Select Existing Provision" %>
     <%= f.fields_for :provision do |p| %> 
         <%= p.text_field :name %><br>
         <%= p.label :provision_type, "Provision Type: " %>
@@ -22,7 +22,7 @@
         <%= p.number_field :approx_cals_per_serving, min: 0 %><br><br>
     <% end %>
     <%= f.label :amount %>: 
-    <%= f.number_field :amount %><br>
+    <%= f.number_field :amount, min: 0 %><br>
     <%= f.label :unit %>: 
     <%= f.text_field :unit %><br>
     <%= f.label :homemade, "Homemade? " %>
