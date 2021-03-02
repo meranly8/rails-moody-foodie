@@ -1,14 +1,5 @@
 <h1>New Provision</h1>
-<% if @provision.errors.any? %>
-    <div id="error_explanation">
-    <h2> <%= pluralize(@provision.errors.count, "error") %> prohibited entry from being saved: </h2>
-    <ul>
-        <% @provision.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-    </div>
-<% end %>
+<%= render partial: 'provision_errors', locals: {provision: @provision}  %>
 
 <%= form_for @provision do |f| %>
     <%= f.label :name %><br>
