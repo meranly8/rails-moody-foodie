@@ -7,5 +7,6 @@ class Entry < ApplicationRecord
     has_many :provisions, through: :entry_provisions
 
     scope :order_by_date, -> {order(date: :desc)}
+    scope :order_by_mood, -> {order(:end_of_day_mood)}
     
 end
